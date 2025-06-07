@@ -13,6 +13,8 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 # Import our services
+import sys
+sys.path.append('/app/backend')
 from google_sheets_service import sheets_service
 from telegram_service import telegram_service
 
