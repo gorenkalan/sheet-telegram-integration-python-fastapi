@@ -46,7 +46,7 @@ rate_limit_storage = {}
 # Pydantic Models
 class OrderCreate(BaseModel):
     customer_name: str = Field(..., min_length=2, max_length=100)
-    customer_email: str = Field(..., regex=r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')
+    customer_email: str = Field(..., pattern=r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')
     customer_phone: str = Field(..., min_length=10, max_length=15)
     customer_address: str = Field(..., min_length=10, max_length=500)
     product_id: int
